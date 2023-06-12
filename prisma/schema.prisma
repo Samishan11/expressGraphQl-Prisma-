@@ -15,6 +15,16 @@ model User {
   password      String
   sentChats     Chat[] @relation("SenderRelation")
   receivedChats Chat[] @relation("ReceiverRelation")
+  roomsOwned    Room[] @relation("OwnerRelation")
+  roomsJoined   Room[] @relation("JoinRelation")
+}
+
+model Room {
+  id      String @id @default(auto()) @map("_id") @db.ObjectId
+  owner   User   @relation("OwnerRelation", fields: [ownerId], references: [id])
+  ownerId String @db.ObjectId
+  join    User   @relation("JoinRelation", fields: [joinId], references: [id])
+  joinId  String @db.ObjectId
 }
 
 model Chat {
