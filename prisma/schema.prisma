@@ -1,6 +1,5 @@
 generator client {
-  provider        = "prisma-client-js"
-  previewFeatures = ["mongodb"]
+  provider = "prisma-client-js"
 }
 
 datasource db {
@@ -20,11 +19,11 @@ model User {
 }
 
 model Room {
-  id      String @id @default(auto()) @map("_id") @db.ObjectId
-  owner   User   @relation("OwnerRelation", fields: [ownerId], references: [id])
-  ownerId String @db.ObjectId
-  join    User   @relation("JoinRelation", fields: [joinId], references: [id])
-  joinId  String @db.ObjectId
+  id                String @id @default(auto()) @map("_id") @db.ObjectId
+  roomCreater       User   @relation("OwnerRelation", fields: [roomCreaterUserId], references: [id])
+  roomCreaterUserId String @db.ObjectId
+  roomJoinUser      User   @relation("JoinRelation", fields: [roomJoinUserId], references: [id])
+  roomJoinUserId    String @db.ObjectId
 }
 
 model Chat {
