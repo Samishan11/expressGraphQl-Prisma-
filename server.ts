@@ -2,7 +2,8 @@ import express, { Express, Request, Response } from 'express';
 import { PrismaClient } from '@prisma/client'
 import { Server } from "socket.io";
 const app: Express = express();
-const server = require('http').createServer(app);
+import { createServer } from 'http';
+const server = createServer(app)
 const io = new Server(server, {
     cors: {
       origin: "http://127.0.0.1:5173",

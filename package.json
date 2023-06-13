@@ -2,7 +2,7 @@
   "name": "chat-backend",
   "version": "1.0.0",
   "description": "",
-  "main": "server.ts",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.ts",
@@ -26,6 +26,7 @@
     "@prisma/client": "^4.15.0",
     "bcryptjs": "^2.4.3",
     "express": "^4.18.2",
+    "express-async-handler": "^1.2.0",
     "jsonwebtoken": "^9.0.0",
     "socket.io": "^4.6.2"
   },
