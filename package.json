@@ -23,7 +23,7 @@
     "schema": "prisma/schema.prisma"
   },
   "dependencies": {
-    "@prisma/client": "^4.15.0",
+    "@prisma/client": "^4.16.2",
     "bcryptjs": "^2.4.3",
     "express": "^4.18.2",
     "express-async-handler": "^1.2.0",
