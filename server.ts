@@ -1,6 +1,5 @@
 import express, { Express, Request, Response } from "express";
 import { GraphQLObjectType, GraphQLSchema, GraphQLString } from "graphql";
-
 import { PrismaClient, Prisma } from "@prisma/client";
 const prisma = new PrismaClient();
 import { Server } from "socket.io";
@@ -29,18 +28,6 @@ const schema = new GraphQLSchema({
     },
   }),
 });
-
-async function main() {
-  await prisma.user.create({
-    data: {
-      username: "Rich",
-      email: "hello@prisma.com",
-      password: "123456",
-    },
-  });
-}
-
-main();
 
 server.listen(PORT, () => {
   console.log(`server running on port ${PORT}`);
